@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6 Cases | Case 2</title>
+    <link rel="stylesheet" href="./style/case_7.css">
+    <link rel="stylesheet" href="./style/cases_general.css">
+
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+</head>
+
+<body class="body">
+    <div class="timer">
+        <p id="count_down"></p>
+    </div>
+    <div id="row">
+        <div class="left column">
+            <!--build the menu and the submenus-->
+            <div class="menu">
+                <ul>
+                    <li class="item" id="invest">
+                        <a href="#" class="btn_active">Case Questions</a>
+                        <div class="smenu">
+                            <a href="#" class="target">Case 1</a>
+                            <a href="#" class="btn_active">Case 2</a>
+                            <a href="#" class="target">Case 3</a>
+                            <a href="#" class="target">Case 4</a>
+                            <a href="#" class="target">Case 5</a>
+                            <a href="#" class="target">Case 6</a>
+
+                        </div>
+                    </li>
+                </ul>
+                <button id="clearStorage">Restart</button>
+
+            </div>
+        </div>
+        <!--main screen column-->
+        <div class="main_screen column">
+            <div class="question_container">
+                <h1>The following information concerns the new Konik horse population in
+                    the reserve:</h1>
+                <br>
+                <ul style="margin-left: 20px;">
+                    <li>The ratio of male:female Konik horses is x(<div class="draggable" draggable="true"
+                            style="display: inline;">12</div>):y(<div class="draggable" draggable="true"
+                            style="display: inline;">13</div>), and is constant
+                        for new Konik horses entering from all 4 regions of Polvia.</li>
+                    <li>The ratio of Mobeky:Koyavt:Luntsky:Lohnst Konik horses entering
+                        the Peatkey Reserve is a(<div class="draggable" draggable="true" style="display: inline;">4
+                        </div>):b(<div class="draggable" draggable="true" style="display: inline;">6</div>):c(<div  
+                            class="draggable" draggable="true" style="display: inline;">3</div>):d(<div
+                            class="draggable" draggable="true" style="display: inline;">7</div>).</li>
+                    <li>The median height for a Koyavtn male Konik horse is <div class="draggable" draggable="true" style="display: inline;">186</div> cm. </li>
+                </ul>
+                <br>
+                <h1 id="question_title" style="margin-bottom: 10px;">Question</h1>
+                <p style="margin-bottom: 10px;">What is the probability that a new Polvian Konik horse, picked at
+                    random, will be a Koyavtian male shorter than 186cm?</p>
+                <form>
+                    <input class="radio" type="radio" name="case_2_radio" id="Case 2 radio a"
+                        value="[x/(y+x)] * [b/(a+b+c+d)] / 2">
+                    <label for="case_2_radio_1">[x/(y+x)] * [b/(a+b+c+d)] / 2 </label>
+                    <br>
+                    <input class="radio" type="radio" name="case_2_radio" id="Case 2 radio b"
+                        value="(x/y) * [b/(a+.5b+d+c)] / 2">
+                    <label for="case_2_radio_2">(x/y) * [b/(a+.5b+d+c)] / 2</label>
+                    <br>
+                    <input class="radio" type="radio" name="case_2_radio" id="Case 2 radio c"
+                        value="[(y+x)/y] * [(a+b+c+d)/b] / 2">
+                    <label for="case_2_radio_3">[(y+x)/y] * [(a+b+c+d)/b] / 2</label>
+                    <br>
+                    <input class="radio" type="radio" name="case_2_radio" id="Case 2 radio d"
+                        value="(x/y) * [b/(a+.5b+d+c)] / 4 ">
+                    <label for="case_2_radio_4">(x/y) * [b/(a+.5b+d+c)] / 4 </label>
+                </form>
+                <div><button class="end_btn" onclick="showConfirmBox()">Next Case</button></div>
+            </div>
+            <div class="container_main_screen">
+                <div class="overlay" id="overlay" hidden>
+                    <div class="confirm-box">
+                        <h2 id="forward">Do you want to move to the next question?</h2><br>
+                        <p id="inside_confirm_p">You won’t be able to change your answer</p>
+                        <br>
+                        <button onclick="isConfirm(false)" class="confirm_btn">Back to question</button>
+                        <button onclick="location.href='case_3.html';" class="confirm_btn">Move forward</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="right_screen column">
+        <div class="container">
+            <div class="calculator">
+                <div class="display">
+                    <input type="text" id="inputField">
+                    <div id="result" class="draggable" draggable="true">0</div>
+                    <hr id="sep_line">
+                </div>
+                <div class="buttons">
+                    <button class="calculator-btn items" data-value="AC">AC</button>
+                    <button class="calculator-btn items" data-value="(">(</button>
+                    <button class="calculator-btn items" data-value=")">)</button>
+                    <button class="calculator-btn items" data-value="C">C</button>
+                    <button class="calculator-btn" data-value="7">7</button>
+                    <button class="calculator-btn" data-value="8">8</button>
+                    <button class="calculator-btn" data-value="9">9</button>
+                    <button class="calculator-btn items" data-value="/">/</button>
+                    <button class="calculator-btn" data-value="4">4</button>
+                    <button class="calculator-btn" data-value="5">5</button>
+                    <button class="calculator-btn" data-value="6">6</button>
+                    <button class="calculator-btn items" data-value="*">*</button>
+                    <button class="calculator-btn" data-value="1">1</button>
+                    <button class="calculator-btn" data-value="2">2</button>
+                    <button class="calculator-btn" data-value="3">3</button>
+                    <button class="calculator-btn items" data-value="-">-</button>
+                    <button class="calculator-btn" data-value="0">0</button>
+                    <button class="calculator-btn" data-value=".">.</button>
+                    <button class="calculator-btn" data-value="=">=</button>
+                    <button class="calculator-btn items" data-value="+">+</button>
+                </div>
+            </div>
+        </div>
+        <script src="./js/case_1.js"></script>
+        <script src="./js/cases.js"></script>
+
+</body>
+
+</html>

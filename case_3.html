@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6 Cases | Case 3</title>
+    <link rel="stylesheet" href="./style/cases_general.css">
+    <link rel="stylesheet" href="./style/case_2.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+</head>
+
+<body class="body">
+    <div class="timer">
+        <p id="count_down"></p>
+    </div>
+    <div id="row">
+        <div class="left column">
+            <!--build the menu and the submenus-->
+            <div class="menu">
+                <ul>
+                    <li class="" id="invest">
+                        <a href="" class="btn_active">Case Questions</a>
+                        <div class="smenu">
+                            <a href="" class="target">Case 1</a>
+                            <a href="" class="target">Case 2</a>
+                            <a href="" class="btn_active">Case 3</a>
+                            <a href="" class="target">Case 4</a>
+                            <a href="" class="target">Case 5</a>
+                            <a href="" class="target">Case 6</a>
+
+                        </div>
+                    </li>
+                </ul>
+                <button id="clearStorage">Restart</button>
+            </div>
+        </div>
+        <!--main screen column-->
+        <div class="main_screen column">
+            <div class="question_container">
+                The ecologists want to keep the Konik horses as healthy as possible
+                whilst they’re being transported to the Peatkey Reserve.
+                <br><br>
+                <div>If the ship departed from the Polvia region during summer,
+                    mosquitoes have a <div class="draggable" draggable="true" data-title="Chance of infection"
+                        style="display: inline;" id="Chance_of_infecting">20%</div> chance of infecting <div class="draggable" draggable="true"
+                        data-title="Konik horses infected each time" style="display: inline;" id="Konik_horses_infected">3%</div> of the Konik
+                    horses
+                    with Givolst bacteria (only carried by moquitos from Polvia), which
+                    always leads to Zoinskit disease. </div>
+                <br>
+                <div>Fortunately, mosquitoes can’t infect more than <div class="draggable" draggable="true"
+                    data-title="Maximum horses infected" style="display: inline;" id="Maximum_horses_infected">12%</div> of the Konik
+                    horses. </div><br>
+                <div>Belvist and Eatlestone are much closer to the Peatkey Reserve than
+                    Polvia is, so any shipments that originate from Belvist and/or
+                    Eatlestone will never dock at Polvian ports on their way to the
+                    Reserve.</div><br>
+                <div>You are given a report with the following variables regarding all
+                    shipments of new Konik horses arriving to the Peatkey Reserve.</div>
+                <ul style: "list-style-type: disc; margin-left: 20px;">
+                    <li>
+                        <div class="draggable" draggable="true" style="width: fit-content;" data-title="Variable #1" id="Variable1">
+                            Port of departure</div>
+                    </li>
+                    <li>
+                        <div class="draggable" draggable="true" style="width: fit-content;" data-title="Variable #2" id="Variable2">
+                            Date of departure</div>
+                    </li>
+                    <li>
+                        <div class="draggable" draggable="true" style="width: fit-content;" data-title="Variable #3" id="Variable3">
+                            Date of arrival</div>
+                    </li>
+                    <li>
+                        <div class="draggable" draggable="true" style="width: fit-content;" data-title="Variable #4" id="Variable4">
+                            Number of Konik horses</div>
+                    </li>
+                    <li>
+                        <div class="draggable" draggable="true" style="width: fit-content;" data-title="Variable #5" id="Variable5">
+                            Type of Konik horses aboard</div>
+                    </li>
+                    <li>
+                        <div class="draggable" draggable="true" style="width: fit-content;" data-title="Variable #6" id="Variable6"> #
+                            of stops along the way</div>
+                    </li>
+                    <li>
+                        <div class="draggable" draggable="true" style="width: fit-content;" data-title="Variable #7" id="Variable7">
+                            Docked ports</div>
+                    </li>
+                    <br>
+                    <div id="the_question_title">Question <br><br></div>
+
+                    <p id="the_question">Which variables are needed to assess if there’s a risk of a Zoinskit
+                        outbreak to 50 or more Konik horses? Please drop it in the research
+                        Journal on the right.
+                    </p>
+                    <div> <button class="end_btn" onclick="showConfirmBox()">Next Case</button>
+                    </div>
+            </div>
+            <div class="container_main_screen">
+                <div class="overlay" id="overlay" hidden>
+                    <div class="confirm-box">
+                        <h2 id="forward">Do you want to move to the next question?</h2><br>
+                        <p id="inside_confirm_p">You won’t be able to change your answer</p>
+                        <br>
+                        <button onclick="isConfirm(false)" class="confirm_btn">Back to question</button>
+                        <button onclick="location.href='case_4.html';" class="confirm_btn">Move forward</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="right_screen" id="case_three">
+        <div class="container"></div>
+        Research Journal
+            <hr>
+    </div>
+    </div>
+    <script src="./js/case_2.js"></script>
+    <script src="./js/cases.js"></script>
+
+</body>
+
+</html>

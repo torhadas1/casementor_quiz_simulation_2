@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investigation</title>
+    <link rel="stylesheet" href="./style/index.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+</head>
+
+<body class="body">
+    <div class="timer">
+        <p id="count_down"></p>
+    </div>
+    <div id="row">
+        <div class="left column">
+            <!--build the menu and the submenus-->
+            <div class="menu">
+                <ul>
+                    <li class="item" id="invest">
+                        <a href="#invest" class="btn_active">Investigation</a>
+                        <div class="smenu">
+                            <a href="#objective" class="target">Objective</a>
+                            <a href="#first_exhibit" class="target">Exhibit 1</a>
+                            <a href="#second_exhibit" class="target">Exhibit 2</a>
+                            <a href="#study">Study</a>
+                        </div>
+                    </li>
+                    <li class="item" id="analysis">
+                        <a onclick="PressAnalysisButtonToLocalStorage()" class="btn">Analysis</a>
+                    </li>
+                    <li class="item" id="report">
+                        <a href="#" class="btn">Report</a>
+                    </li>
+                </ul>
+                <button id="clearStorage">Restart</button>
+            </div>
+        </div>
+        <!--main screen column-->
+        <div class="main_screen column">
+            <div class="container_main_screen">
+                <div class="overlay" id="overlay" hidden>
+                    <div class="confirm-box">
+                        <h2 id="forward">Do you want to move forward?</h2><br>
+                        <p id="inside_confirm_p">If you have collected all the relevant information
+                            you can now move to the Analysis phase.</p>
+                        <button onclick="isConfirm(false)" class="confirm_btn">Back to Investigation</button>
+                        <button onclick="SaveToLocalStorage()" class="confirm_btn">Move
+                            to
+                            Analysis</button>
+                    </div>
+                </div>
+
+                <div id="objective" class=container>
+
+                    <div id="research_info_title" class=container>Research Information</div><br>
+                    <div class="the_main_text">You have been hired as a wildlife conservationist in the Peatkey
+                        Reserve, a protected area where wildlife roams free. As a wildlife
+                        conservationist, you will receive data regarding the Konik horses that
+                        inhabit the Peatkey Reserve. </div>
+                    <br>
+                    <div class="draggable" id="objective_line" data-title="Goal">OBJECTIVE: Understand if the new apple
+                        tree distribution program
+                        will create a balanced number of Konik horses in Langker Pasture and
+                        Revok Forest Land according to the study goal.
+                    </div>
+
+                </div>
+                <div id="first_exhibit" class="container">
+                    <br> Exhibit 1: Apple Tree Reserves – Year 4
+                    <div class="island">
+                        <img src="./img/Exhibit 1.png" alt="the island">
+                        <div class="draggable" id="exhibit_draggable1" data-title="Apple trees in Langker Pasture">
+                            56
+                        </div class=container>
+                        <div class="draggable" id="exhibit_draggable2" data-title="Apple trees in Elcobb Land">107</div>
+                        <div class="draggable" id="exhibit_draggable3" data-title="Apple trees in Revok Forest">40</div>
+                        <div class="draggable" id="exhibit_draggable4" data-title="Apple trees in Miley Pond">96</div>
+                    </div>
+                </div>
+                <div id="second_exhibit" class="container">
+                    Exhibit 2: Konik Horse Herds – Years 1 to 4
+                    <div class="chart">
+                        <img src="./img/Exhibit 2.png" alt="the chart">
+                        <div class="draggable" id="exhibit2_draggable1" data-title="Herds in Langker Pasture, Y1">24
+                        </div>
+                        <div class="draggable" id="exhibit2_draggable2" data-title="Herds in Langker Pasture, Y2">26
+                        </div>
+                        <div class="draggable" id="exhibit2_draggable3" data-title="Herds in Langker Pasture, Y3">31
+                        </div>
+                        <div class="draggable" id="exhibit2_draggable4" data-title="Herds in Langker Pasture, Y4">38
+                        </div>
+                        <div class="draggable" id="exhibit2_draggable5" data-title="Herds in Miley Pond, Y1">89</div>
+                        <div class="draggable" id="exhibit2_draggable6" data-title="Herds in Miley Pond, Y2">65</div>
+                        <div class="draggable" id="exhibit2_draggable7" data-title="Herds in Miley Pond, Y3">52
+                        </div>
+                        <div class="draggable" id="exhibit2_draggable8" data-title="Herds in Miley Pond, Y4">63</div>
+                        <div class="draggable" id="exhibit2_draggable9" data-title="Herds in Elcobb Land, Y1">94</div>
+                        <div class="draggable" id="exhibit2_draggable10" data-title="Herds in Elcobb Land, Y2">102
+                        </div>
+                        <div class="draggable" id="exhibit2_draggable11" data-title="Herds in Elcobb Land, Y3">87
+                        </div>
+                        <div class="draggable" id="exhibit2_draggable12" data-title="Herds in Elcobb Land, Y4">107
+                        </div>
+                        <div class="draggable" id="exhibit2_draggable13" data-title="Herds in Revok Forest, Y1">44
+                        </div>
+                        <div class="draggable" id="exhibit2_draggable14" data-title="Herds in Revok Forest, Y2">47</div>
+                        <div class="draggable" id="exhibit2_draggable15" data-title="Herds in Revok Forest, Y3">49
+                        </div>
+                        <div class="draggable" id="exhibit2_draggable16" data-title="Herds in Revok Forest, Y4">53</div>
+                    </div>
+                </div>
+                <div id="study" class="container">
+                    <div class="container"> The goal of the study is to have a balanced number of Konik horses
+                        throughout the Reserve, in which each area of the Peatkey Reserve
+                        has a variance less than, or equal to,<div class="draggable study_drag" id="goal_of_monkeys"
+                            draggable="true" data-title="Varinace limit for Konik horses">10%</div>
+                        of the amount of Konik
+                        horses, by year 5. Konik horses cannot be removed from the Peatkey
+                        Reserve, only added. <br> <br>
+                    </div>
+                    PEATKEY RESERVE INFORMATION
+                    <div class="container"><br>
+                        In order to create the optimal ecological Reserve, the ecologists want
+                        to create a new distribution of Konik horses throughout the Peatkey
+                        Reserve.<br><br> Historically, Konik horse herds couldn’t migrate from one area of
+                        Peatkey Reserve to other areas
+                        <div class="draggable study_drag" id="monkeys_for_haeyenas" draggable="true"
+                            data-title="Reason for no inter-area migration">due to lakes that separated each area</div>
+                        Ecologists have now created many animal crossings and noticed that
+                        apples are what attract horses to a specific area.<br>
+                        With Research Journal this goal in mind, ecologists will plant new apple trees within the
+                        Peatkey Reserve in order to create a balanced amount of Konik horses
+                        throughout the <div class="draggable study_drag" id="haeyanas_for_monkeys" draggable="true"
+                            data-title="Areas with the goal of balanced Konix horses">4 areas
+                        </div>
+                        Aside from this, ecologists will also be
+                        placing new Konik horses into the Peatkey Reserve. <br><br>
+                        The ecologists have determined a very unlikely, potential, worst-case
+                        scenario in which adding apple trees will increase the original Konik
+                        horse (currently inhabiting Peatkey Reserve) apple consumption by
+                        <div class="draggable study_drag" draggable="true" id="2_dragable"
+                            data-title="Worst-case increase in original Konix horse apple consumption">20%</div>
+                        This possible scenario is isolated only to original Konik horses
+                        within <div class="draggable study_drag" draggable="true" id="evolution"
+                            data-title="Areas with worst-case scenario">Langker Pasture and Revok Forest</div>
+                        <br><br>
+                        <div class="container">If there are no apples available, new Konik horses (introduced in Y5)
+                            will eat carrots whereas the original Konik horses won’t. Carrots only
+                            grow in
+                            <div class="draggable study_drag" id="ratio" draggable="true"
+                                data-title="Areas with carrots">Miley Pond and Elcobb Land</div>.Konik
+                            horses prefer apples over
+                            carrots, therefore,
+
+                            <div class="draggable study_drag" draggable="true"
+                                data-title="Carrots to attract one Konik horse" id="banana_trees_evolution">
+                                3</div>
+                            carrots are necessary to feed/attract one new
+                            Konik horse. The ecologists have calculated that the amount of Konik horses within
+                            a herd differs depending on the area of the Peatkey Reserve.
+                        </div>
+                        <div class="container">
+                            <br>
+                            <ul style="list-style-type:disc" class="inner_ul">
+                                <div class="container">
+                                    <li class="inner_list">Each of Eldcobb Land's Konik horse herd has <div
+                                            class="draggable study_drag" draggable="true"
+                                            data-title="Horses per herd in Elcobb Land" id="10_dragable">
+                                            12</div> horses </li>
+                                    <li class="inner_list">The ratio of # of Konik horses within a herd is the
+                                        following:
+                                        <ul style="list-style-type: circle;">
+                                            <li class="inner_list">Elcobb Land : Revok Forest : Miley Pond: Langker
+                                                Pasture = <br>
+                                                <div class="draggable study_drag" draggable="true"
+                                                    data-title="Horses per herd ration - Elcobb Land : Revok Forest : Miley Pond: Langker Pasture : :Miley Pond : Langker Pasture"
+                                                    id="Ratio">
+                                                    3 : 5 : 8 : 7</div>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </div>
+                            </ul>
+                        </div>
+                        <br>
+                    </div>
+                    <div class="container">The amount of apples on each apple tree depends on the area in
+                        which it is placed. The ecologists have calculated that
+                        <div class="draggable study_drag" draggable="true" id="will_die"
+                            data-title="Apple : Horse ratio">
+                            1 apple feeds and attracts 1 horse </div>
+                        and thus, it is possible to find the amount of
+                        apples that grow on each apple tree planted in a specific area by
+                        dividing the amount of Konik horses by the amount of apple trees.
+                        The number of apples per tree won’t change in year 5. <br><br> The ecologist team has currently
+                        defined the following activities to be
+                        completed at the end of year 4. Assume the growth of horses is
+                        possible only thanks to these activities
+                    </div>
+                    <ul class="inner_ul" style="list-style-type: disc;">
+                        <li class="inner_list">
+                            <div class="draggable study_drag" draggable="true" id="activity_chocolate"
+                                data-title="Activity #1 to be completed end of year 4">
+                                For each 1 apple that is added, introduce 1 Konik horse into the Peatkey Reserve
+                            </div>
+                        </li>
+                        <li class="inner_list">
+                            <div class="draggable study_drag" draggable="true" id="activity_chocolate"
+                                data-title="Activity #2 to be completed end of year 4">
+                                Place 63 apple trees in Elcobb Land
+                            </div>
+                        </li>
+                        <li class="inner_list">
+                            <div class="draggable study_drag" draggable="true" id="activity_chocolate"
+                                data-title="Activity #3 to be completed end of year 4">
+                                Place 44 apple trees in Langker Pasture
+                            </div>
+                        </li>
+                        <li class="inner_list">
+                            <div class="draggable study_drag" draggable="true" id="activity_chocolate"
+                                data-title="Activity #4 to be completed end of year 4">
+                                Place 35 apple trees in Revok Forest
+                            </div>
+                        </li>
+                    </ul>
+
+                    <br>
+
+                    <div>
+                        <button class="end_btn" onclick="showConfirmBox()">Complete Investigation</button>
+                    </div>
+                    <div class="container"> <br><br><br></div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="right_screen" id="journal_container">
+        <div class="journal_container" contenteditable="true">
+            Research Journal
+            <hr>
+        </div>
+    </div>
+    </div>
+    <script src="./js/index.js"></script>
+</body>
+
+</html>

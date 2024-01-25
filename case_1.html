@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6 Cases | Case 1</title>
+    <link rel="stylesheet" href="./style/case_1.css">
+    <link rel="stylesheet" href="./style/cases_general.css">
+
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+</head>
+
+<body class="body">
+    <div class="timer">
+        <p id="count_down"></p>
+    </div>
+    <div id="row">
+        <div class="left column">
+            <!--build the menu and the submenus-->
+            <div class="menu">
+                <ul>
+                    <li class="item" id="invest">
+                        <a href="#" class="btn_active">Case Questions</a>
+                        <div class="smenu">
+                            <a href="#" class="btn_active">Case 1</a>
+                            <a href="#" class="target">Case 2</a>
+                            <a href="#" class="target">Case 3</a>
+                            <a href="#" class="target">Case 4</a>
+                            <a href="#" class="target">Case 5</a>
+                            <a href="#" class="target">Case 6</a>
+
+                        </div>
+                    </li>
+                </ul>
+                <button id="clearStorage">Restart</button>
+
+            </div>
+        </div>
+        <!--main screen column-->
+        <div class="main_screen column">
+            <br>
+            <div class="question_container"> The following represents the different foods eaten by rabbits within the
+                Peatkey Reserve.
+            </div>
+
+            <br>
+            <img src="./img/cases_bar_chart.png" alt="cases_bar_chart">
+            <div class="question_container">
+                <div class="question_title">Question</div>
+                <br>
+                <p>Considering that the population of rabbits in Peatkey Reserve is the following:</p>
+                <ul style="list-style-type: disc; margin-left: 20px;">
+                    <li>Langker Pasture is 25%</li>
+                    <li>Revok Forest is 37.5%
+                    </li>
+                    <li>Miley Pond is 25%</li>
+                    <li>Elcobb Land is 12.5%</li>
+                </ul>
+                <br>
+                <p>Which area has the largest average yearly consumption, per rabbit, of:</p>
+                <br>
+                <label for="Case 1 Cabbage">Cabbage</label>
+                <select class="select_box" id="Case 1 Cabbage" name="case_1_Cabbage"
+                    style="margin-left: 20px; margin-top: 5px; margin-bottom: 5px;">
+                    <option value="" selected disabled hidden>Choose</option>
+                    <option value="Langker Pasture">Langker Pasture</option>
+                    <option value="Revok Forest">Revok Forest</option>
+                    <option value="Miley Pond">Miley Pond</option>
+                    <option value="Elcobb Land">Elcobb Land</option>
+                </select>
+                <br>
+
+
+                <label for="Case 1 Blueberries">Blueberries</label>
+                <select class="select_box" id="Case 1 Blueberries" name="case_1_Blueberries"
+                    style="margin-left: 2px; margin-top: 5px; margin-bottom: 5px;">
+                    <option value="" selected disabled hidden>Choose</option>
+                    <option value="Langker Pasture">Langker Pasture</option>
+                    <option value="Revok Forest">Revok Forest</option>
+                    <option value="Miley Pond">Miley Pond</option>
+                    <option value="Elcobb Land">Elcobb Land</option>
+                </select>
+                <br>
+
+                <label for="Case 1 Celery">Celery</label>
+                <select class="select_box" id="Case 1 Celery" name="case_1_Celery"
+                    style="margin-left: 45px; margin-top: 5px; margin-bottom: 5px;">
+                    <option value="" selected disabled hidden>Choose</option>
+                    <option value="Langker Pasture">Langker Pasture</option>
+                    <option value="Revok Forest">Revok Forest</option>
+                    <option value="Miley Pond">Miley Pond</option>
+                    <option value="Elcobb Land">Elcobb Land</option>
+                </select>
+                <br>
+
+                <label for="Case 1 Strawberry">Strawberry</label>
+                <select class="select_box" id="Case 1 Strawberry" name="case_1_Strawberry"
+                    style="margin-left: 3px; margin-top: 5px; margin-bottom: 5px;">
+                    <option value="" selected disabled hidden>Choose</option>
+                    <option value="Langker Pasture">Langker Pasture</option>
+                    <option value="Revok Forest">Revok Forest</option>
+                    <option value="Miley Pond">Miley Pond</option>
+                    <option value="Elcobb Land">Elcobb Land</option>
+                </select>
+                <br>
+
+                <div><button class="end_btn" onclick="showConfirmBox()">Next Case</button></div>
+            </div>
+            <div class="container_main_screen">
+                <div class="overlay" id="overlay" hidden>
+                    <div class="confirm-box">
+                        <h2 id="forward">Do you want to move to the next question?</h2><br>
+                        <p id="inside_confirm_p">You won’t be able to change your answer</p>
+                        <br>
+                        <button onclick="isConfirm(false)" class="confirm_btn">Back to question</button>
+                        <button onclick="location.href='case_2.html';" class="confirm_btn">Move forward</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./js/calculator.js"></script>
+    <script src="./js/cases.js"></script>
+
+</body>
+
+</html>
