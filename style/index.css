@@ -390,23 +390,30 @@
 }
 
 .island #exhibit_draggable1 {
-    top: 14.8%;
+    top: 15.5%;
     left: 17.5%;
+    width: 40px;
 }
 
 .island #exhibit_draggable2 {
     top: 56%;
     left: 24.3%;
+    width: 45px;
+
 }
 
 .island #exhibit_draggable3 {
-    top: 84.5%;
+    top: 85%;
     left: 51.5%;
+    width: 40px;
+
 }
 
 .island #exhibit_draggable4 {
-    top: 39.8%;
-    left: 70%;
+    top: 40.2%;
+    left: 70.4%;
+    width: 40px;
+
 }
 
 .island #exhibit_draggable5 {

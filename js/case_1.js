@@ -75,7 +75,7 @@ function showConfirmBox() {
     const value = $(this).val();
     localStorage.setItem(id, value);
   });
-  const selectedRadio = $('input[type=radio][name=case_10_radio]:checked');
+  const selectedRadio = $('input[type=radio][name=case_2_radio]:checked');
   const id = selectedRadio.attr('id');
   const value = selectedRadio.val();
   localStorage.setItem(id, value);

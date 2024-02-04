@@ -44,7 +44,8 @@
         <div class="main_screen column">
             <div class="question_container">
                 <br>
-                <h1>The island present 4 common types of monkeys, summarized as below</h1>
+                <h1> Below are the (only) 4 regions of Polvia from which new Konik horses, placed in the Peatkey Reserve
+                    during May, were sourced from: </h1>
                 <br>
 
                 <table>
@@ -54,30 +55,31 @@
                     </tr>
                     <tr>
                         <td>Mobeky</td>
-                        <td class="draggable" draggable="true">32</td>
+                        <td class="draggable" draggable="true">72</td>
                     </tr>
                     <tr>
                         <td>Luntsky</td>
-                        <td class="draggable" draggable="true">28</td>
+                        <td class="draggable" draggable="true">86</td>
                     </tr>
                     <tr>
                         <td>Koyavt</td>
-                        <td class="draggable" draggable="true">26</td>
+                        <td class="draggable" draggable="true">39</td>
                     </tr>
                     <tr>
                         <td>Lohnst</td>
-                        <td class="draggable" draggable="true">22</td>
+                        <td class="draggable" draggable="true">55</td>
                     </tr>
                 </table>
                 <br>
                 <div class="question_title" style="margin-bottom: 10px;">Question</div>
 
-                <p id="the_question">If all other new Konik horses, placed in the Peatkey Reserve  during
-                    May, were sourced from Belvist (<p class="draggable small_drag" draggable="true">20%</p> more than those in Polvia) 
-                and Eatlestone ( <p class="draggable small_drag" draggable="true">10%</p> amore than those in Belvist), what is the
-                probability that one of these new Konik horses, picked at random,
+                <div id="the_question" style="margin-right: 10px;">If all other new Konik horses, placed in the Peatkey Reserve during
+                    May, were sourced from Belvist (
+                <div class="draggable small_drag" draggable="true">20%</div> more than those in Polvia)
+                and Eatlestone ( <div class="draggable small_drag" draggable="true">10%</div> more than those in Belvist),
+                what is the probability that one of these new Konik horses, picked at random,
                 comes from either the Polvian region of Luntsky, Koyavt, or Lohnst?
-                </p>
+                </div>
                 <br>
 
                 <label for="answer">Answer</label>
@@ -86,14 +88,13 @@
 
                 <input class="input_answer" type="text" name="case_6_answer" id="Case 6" min="0" required>
 
-                <div><button class="end_btn" onclick="showConfirmBox()">Next Case</button></div>
+                <div><button class="end_btn" onclick="showConfirmBox()">Finish Study</button></div>
             </div>
             <div class="container_main_screen">
                 <div class="overlay" id="overlay" hidden>
                     <div class="confirm-box">
                         <h2 id="forward">Are you sure you want to finish the test?</h2><br>
                         <p id="inside_confirm_p">You won’t be able to change your answer</p>
-                        <br>
                         <button onclick="isConfirm(false)" class="confirm_btn">Back to question</button>
                         <button onclick="location.href='test_review.html';" class="confirm_btn">Finish test</button>
                     </div>
