@@ -124,7 +124,7 @@ function performCalculation(value) {
         alert('Invalid Expression');
       } else {
         // format result
-        let formattedResult = parseFloat(result.toFixed(2)).toString();
+        let formattedResult = parseFloat(result).toString();
         if (formattedResult.indexOf('.') !== -1) {
           while (formattedResult[formattedResult.length - 1] === '0') {
             formattedResult = formattedResult.slice(0, -1);
@@ -157,7 +157,12 @@ $(function () {
       let dataTitle = ui.helper.attr('data-title');
       let otherTitle = ui.helper.attr('title');
       // get the value by replacing the data-title from totalValue
-      let value = totalValue.replace(dataTitle, '').replace('X', '').replace(/[^0-9.]/g, '').trim();
+      let value = totalValue.replace(dataTitle, '').replace('X', '').replace(/[^0-9.%]/g, '').trim();
+      // Check if value contains %
+      if (value.includes("%")) {
+        // Replace % with an empty string, convert to number and divide by 100
+        value = Number(value.replace("%", "")) / 100;
+      }
       $(this).val(value);
     }
   });

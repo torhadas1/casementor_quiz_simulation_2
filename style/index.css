@@ -390,29 +390,37 @@
 }
 
 .island #exhibit_draggable1 {
-    top: 15.5%;
-    left: 17.5%;
-    width: 40px;
+    top: 15.0%;
+    left: 17.9%;
+    width: 35px;
+    height: 23px;
+    font-size: 16px;
 }
 
 .island #exhibit_draggable2 {
     top: 56%;
     left: 24.3%;
     width: 45px;
+    height: 23px;
+    font-size: 16px;
 
 }
 
 .island #exhibit_draggable3 {
-    top: 85%;
-    left: 51.5%;
-    width: 40px;
+    top: 84.6%;
+    left: 51.8%;
+    width: 35px;
+    height: 23px;
+    font-size: 16px;
 
 }
 
 .island #exhibit_draggable4 {
-    top: 40.2%;
-    left: 70.4%;
-    width: 40px;
+    top: 40.1%;
+    left: 70.5%;
+    width: 35px;
+    height: 23px;
+    font-size: 16px;
 
 }
 
