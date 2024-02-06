@@ -124,7 +124,7 @@ function performCalculation(value) {
         alert('Invalid Expression');
       } else {
         // format result
-        let formattedResult = parseFloat(result).toString();
+        let formattedResult = parseFloat(result.toFixed(5)).toString();
         if (formattedResult.indexOf('.') !== -1) {
           while (formattedResult[formattedResult.length - 1] === '0') {
             formattedResult = formattedResult.slice(0, -1);
